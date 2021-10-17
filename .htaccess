@@ -1,0 +1,17 @@
+# commentaire en htaccess
+# on demarre le moteur php de réécrite d'URL
+RewriteEngine on
+# on élimine les vrais fichiers et les dossiers de la règle de réecriture
+# RewriteCond TestString CondPattern [flags]
+# essayer var_dump($_SERVER) pour voir ce qu'il y a dans REQUEST_FILENAME
+# drapeau -f veut dire forbidden (interdit), on retire l'interdiction !-f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# On met en place le règle de réecriture
+# le drapeau [NC], le modèle de la règle RewriteRule est comparé à la
+# requête de manière insensible à la casse. C'est à dire que cette comparaison
+# s'effectue sans tenir compte des majuscules/minuscules dans l'URI comparé.
+# L comme last, Cela signifie dans la plupart des situations que si la règle
+# s'applique, aucune autre règle ne sera traitée.
+# QSA renvoi ds l'url index.php?path1=$1
+RewriteRule ^(.*)$ index.php?path1=$1 [NC,L,QSA]

@@ -1,0 +1,17 @@
+{
+    "name": "isangrain/bataille_php",
+    "description": "jeu de carte bataille",
+    "authors": [
+        {
+            "name": "ebacour",
+            "email": "ebacour78@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "Controller\\": "controller/",
+            "Model\\" : "model/"
+        }
+    },
+    "require": {}
+}
