@@ -8,8 +8,7 @@ include 'assets/inc/front/head.inc.php';
 <?php
     include 'assets/inc/front/header.inc.php';
 ?>
-    <main>
-    <div class="container py-4">
+    <main class="container py-4">
         <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">La Bataille</h1>
@@ -17,17 +16,26 @@ include 'assets/inc/front/head.inc.php';
                 <a href="" type="button" class="btn btn-primary btn-lg">c'est partie</a>
             </div>
         </div>
-        <?php
-        require_once 'controller/HomeController.php';
-            var_dump($cartes);
-            foreach ($cartes as $carte):
-        ?>
-            <p><?= $carte->value?></p>
-        <?php
-            endforeach
-        ?>
-    </div>
-
+        <div class="row">
+            <?php
+                foreach ($cartes as $carte):
+            ?>
+            <div class="col-12 col-lg-3 fw-bold pb-3">
+                <div class="card <?php switch ($carte->color): case 'noir': ?>bg-dark text-light <?php break; case 'rouge':?>bg-danger text-dark<?php break; default: ?>bg-success text-dark <?php endswitch; ?>">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $carte->name?></h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Couleur :&ensp;<?= $carte->color?></li>
+                            <li class="list-group-item">Type :&ensp;<?= $carte->type?></li>
+                            <li class="list-group-item">Valeur :&ensp;<?= $carte->value?></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <?php
+                endforeach
+            ?>
+        </div>
     </main>
 <?php
     include 'assets/inc/front/footer.inc.php';
