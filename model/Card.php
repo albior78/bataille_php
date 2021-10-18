@@ -28,9 +28,17 @@ class Card{
         $query = $this->connexBdd->connexion->prepare($sql);
         $query->execute();
         $return = $query->fetchAll(PDO::FETCH_OBJ);
-        // echo '<pre>';
-        // var_dump($return);
-        // echo '</pre>';
         return $return;
+    }
+
+    public function blendAllCards() {
+        $sql = 'SELECT *
+                FROM card
+                ORDER BY RAND()
+                ';
+        $query = $this->connexBdd->connexion->prepare($sql);
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 }

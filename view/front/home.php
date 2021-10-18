@@ -1,7 +1,4 @@
 <?php
-
-use Controller\HomeController;
-
 include 'assets/inc/front/head.inc.php';
 ?>
     <title>Liste des cartes</title>
@@ -13,7 +10,7 @@ include 'assets/inc/front/head.inc.php';
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">La Bataille</h1>
                 <p class="col-md-8 fs-4">Un jeu de carte très ancien et toujours à la mode pour passer un bon moment en s'amusant à deux.</p>
-                <a href="" type="button" class="btn btn-primary btn-lg">c'est partie</a>
+                <a href="http://localhost/bataille_php/joueurs" type="button" class="btn btn-primary btn-lg">c'est partie</a>
             </div>
         </div>
         <div class="row">

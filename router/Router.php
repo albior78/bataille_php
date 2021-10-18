@@ -1,6 +1,8 @@
 <?php
 
+use Controller\JeuController;
 use Controller\HomeController;
+use Controller\PlayerController;
 
 if (!isset($_SESSION)) session_start();
 
@@ -16,6 +18,16 @@ class Router
         $this->add_route("/", function ($params) {
             $this->currentController = new HomeController();
             $this->currentController->lireToutesLesCartes();
+        });
+
+        $this->add_route("/joueurs", function ($params) {
+            $this->currentController = new PlayerController();
+            $this->currentController->creerDeuxJoueurs();
+        });
+
+        $this->add_route("/jeu", function ($params) {
+            $this->currentController = new JeuController();
+            $this->currentController->deroulementJeuBataille();
         });
     }
 

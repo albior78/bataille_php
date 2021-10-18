@@ -85,4 +85,12 @@ php -r "unlink('composer-setup.php');"
 2- executer la commande composer
     ->php composer.phar dump-autoload
     cela créé le dossier vendor\composer(avec plusieurs fichiers)+ vendor\autoloader.php
+
+!!CARDINALITE
+->OneToOne
+Exemple : chaque voiture a sa propre plaque d’immatriculation et une plaque d’immatriculation est spécifique à une voiture individuelle. Voiture-à-plaque est une relation de type un-à-un.
+->OneToMany ou ManyToOne
+Exemples : de nombreux employés ont le même manager. Employés-à-Manager est une relation de type plusieurs-à-un. Manager-à-employé est une relation de type un-à-plusieurs.
+->ManyToMany
+Exemples : un acteur joue dans de nombreux films et un film a beaucoup d’acteurs. Acteur-à-film est une relation de plusieurs-à-plusieurs. Plusieurs livres peuvent être achetés dans la même transaction et un livre peut être acheté plusieurs fois. ISBN-à-IDCommande est une relation de type plusieurs-à-plusieurs.
 -->

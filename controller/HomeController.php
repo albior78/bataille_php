@@ -4,17 +4,17 @@ namespace Controller;
 
 
 use Model\Card;
-use Model\Player;
+
 
 class HomeController {
 
     private $card;
-    private $player;
+
 
     public function __construct()
     {
         $this->card = new Card;
-        $this->player = new Player;
+        
     }
 
     public function lireToutesLesCartes()
