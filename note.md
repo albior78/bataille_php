@@ -5,12 +5,12 @@ but du jeu: gagner toutes les cartes de l'adversaire par comparaison de cartes
 le jeu : jeu de carte de 52 cartes et un tapis de jeu et 2 joueurs
 
 préparation du jeux:
-1- on mélange le jeu
-2- nbre de joueur 2
-3- un tapis de jeu
-3- on distribue face cachée 26 cartes chacun (52/2) pour en faire un tas de carte
+? 1- on mélange le jeu
+? 2- nbre de joueur 2
+? 3- un tapis de jeu
+? 3- on distribue face cachée 27 cartes chacun (54/2) pour en faire un tas de carte
 
-tour de jeu
+? tour de jeu
 1- chaque joueur pioche une carte au dessus de son tas de cartes faces cachées
 2- chaque joueur pose sa carte sur le tapis
 3- les cartes sont comparées
