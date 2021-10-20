@@ -45,6 +45,10 @@ class JeuController {
         $take1cardp2 = [];
         $take1cardp1 = $firstPlayerCards[0];
         $take1cardp2 = $secondPlayerCards[0];
+        //retirer la carte $take1cardp1 de $firstPlayerCards et recale les indexs
+        array_splice($firstPlayerCards, 0);
+        //retirer la carte $take1cardp2 de $secondPlayerCards et recale les index
+        array_splice($firstPlayerCards, 0);
         $c1 = (int)($take1cardp1['value']);
         $c2 = (int)($take1cardp2['value']);
         echo '<pre>';
@@ -53,8 +57,24 @@ class JeuController {
         echo '</pre>';
         switch (true):
             case $c1<$c2:
-        endswitch;
-        
+                // mélange tableau main gagnante
+                $mainGagnante2 = [];
+                $mainGagnante2 = [0=>$take1cardp1, 1=>$take1cardp2];
+                $mainGagnante2 = shuffle($mainGagnante2);
+                for ($i=0; $i<2; $i++):
+                    $secondPlayerCards = array_push($secondPlayerCards, $mainGagnante2[$i]);
+                endfor;
+                break;
+            case $c1>$c2:
+                $mainGagnante1 = [];
+                $mainGagnante1 = [0=>$take1cardp1, 1=>$take1cardp2];
+                $mainGagnante1 = shuffle($mainGagnante1);
+                for ($i=0; $i<2; $i++):
+                    $firstPlayerCards = array_push($firstPlayerCards, $mainGagnante1[$i]);
+                endfor;
+            case $c1==$c2:
+                
+            endswitch;
 
         require_once 'view/front/jeu.php';
 
