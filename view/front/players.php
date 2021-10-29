@@ -60,10 +60,9 @@ include 'assets/inc/front/head.inc.php';
             </table>
             <?php if($nplayers>=2): ?>
             <div class="col-12 col-lg-2 offset-lg-2">
-                <a type="button" class="btn bg-primary text-light" href="http://localhost/bataille_php/jeu">Continuer vers la partie</a>
+                <a type="button" class="btn bg-primary text-light" href="http://localhost/bataille_php/Battre_les_cartes">Continuer vers la partie</a>
             </div>
             <?php endif; ?>
-            
         </div>
     </main>
 <?php

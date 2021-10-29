@@ -13,5 +13,8 @@ define('SITE_ROOT', $modifFILE);
 // renvoi quelque chose comme E:\LARAGON\www\bataille_php
 // echo SITE_ROOT;
 define('BASE_FOLDER', '/bataille_php');
-define('SCRIPT_ROOT', 'http://localhost/bataille_php'); // on déclare l'url d'accès à la racine du site
-define('IS_ONLINE', false); // Défini si le ConnexionController fonctionne avec le jeu de données de connexion locale ou le jeu distant
+// on déclare l'url d'accès à la racine du site
+define('SCRIPT_ROOT', 'http://localhost/bataille_php');
+// Défini si le ConnexionController fonctionne avec le jeu de données de connexion 
+// locale ou le jeu distant
+define('IS_ONLINE', false);

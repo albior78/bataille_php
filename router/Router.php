@@ -1,8 +1,10 @@
 <?php
 
-use Controller\JeuController;
+
 use Controller\HomeController;
 use Controller\PlayerController;
+use Controller\TapisDeJeuController;
+use Controller\MelangeDistributionController;
 
 if (!isset($_SESSION)) session_start();
 
@@ -25,9 +27,14 @@ class Router
             $this->currentController->creerDeuxJoueurs();
         });
 
-        $this->add_route("/jeu", function ($params) {
-            $this->currentController = new JeuController();
-            $this->currentController->deroulementJeuBataille();
+        $this->add_route("/Battre_les_cartes", function ($params) {
+            $this->currentController = new MelangeDistributionController();
+            $this->currentController->melangeDistributionDuJeu();
+        });
+
+        $this->add_route("/Le_tapis_de_jeu", function ($params) {
+            $this->currentController = new TapisDeJeuController();
+            $this->currentController->deroulementDuJeu();
         });
     }
 
