@@ -38,14 +38,49 @@ class MelangeDistributionController {
             // echo '<strong style="font-size: 2rem">$paquetJ2:</strong>';
             // var_dump($paquetJ2);
             // echo '</pre>';
-            $_SESSION['paquetJ1']=$paquetJ1;
-            $_SESSION['paquetJ2']=$paquetJ2;
+    // tirage carte joueur 1
+    $take1cardp1 = [];
+    $_SESSION['piocherJ1'] = $take1cardp1;
+    // tirage carte joueur2
+    $take1cardp2 = [];
+    $_SESSION['piocherJ2'] = $take1cardp2;
+    // retire index 0 du paquet du joueur 1
+    $firstPayerCardsWithout0index = [];
+    $_SESSION['paquetJ1SansIndex0'] = $firstPayerCardsWithout0index;
+    // retire index 0 du paquet du joueur 2
+    $secondPayerCardsWithout0index = [];
+    $_SESSION['paquetJ2SansIndex0'] = $secondPayerCardsWithout0index;
+    // main gagnante joueur 1
+    $mainGagnante1 = [];
+    $_SESSION['mainGagnanteJ1'] = $mainGagnante1;
+    // main gagnante joueur 2
+    $mainGagnante2 = [];
+    $_SESSION['mainGagnanteJ2'] = $mainGagnante2;
+    // tapis joueur 1
+    $tapis1 =[];
+    $_SESSION['tapisJ1'] = $tapis1;
+    // tapis joueur 2
+    $tapis2 =[];
+    $_SESSION['tapisJ2'] = $tapis2;
+    // valeur carte piochée joueur 1
+    $c1=0;
+    $_SESSION['valeurCarteJ1'] = $c1;
+    // valeur carte piochée joueur 2
+    $c2=0;
+    $_SESSION['valeurCarteJ2'] = $c2;
+
+    // paquet joueur 1
+    $_SESSION['paquetJ1']=$paquetJ1;
+    // paquet joueur 2
+    $_SESSION['paquetJ2']=$paquetJ2;
+
+
         endif;
         // retour vue
         require_once 'view/front/melangeDistribution.php';
     }
 
-    
+
     //! en 1er Argument de la méthode placer une variable $jeuCarteMelange qui va
     //! recevoir l'objet avec sa fonction, voir plus haut $this->card->blendAllCards
     // distribution des cartes:  $decalageDistribution=0 pour player1

@@ -9,80 +9,80 @@ $tours = 0;
     // ?    cachées
     // ----------déclaration des variables--------------
     // tirage carte joueur 1
-    $take1cardp1 = [];
+    //!$take1cardp1 = [];
     // tirage carte joueur2
-    $take1cardp2 = [];
+    //!$take1cardp2 = [];
     // retire index 0 du paquet du joueur 1
-    $firstPayerCardsWithout0index = [];
+    //!$firstPayerCardsWithout0index = [];
     // retire index 0 du paquet du joueur 2
-    $secondPayerCardsWithout0index = [];
+    //!$secondPayerCardsWithout0index = [];
     // main gagnante joueur 1
-    $mainGagnante1 = [];
+    //!$mainGagnante1 = [];
     // main gagnante joueur 2
-    $mainGagnante2 = [];
+    //!$mainGagnante2 = [];
     // tapis joueur 1
-    $tapis1 =[];
+    //!$tapis1 =[];
     // tapis joueur 2
-    $tapis2 =[];
+    //!$tapis2 =[];
     //--------------------------------
     // lecture de la carte index 0 du paquet du joueur 1
-    $take1cardp1 = $firstPlayerCards[0];
+    //!$take1cardp1 = $firstPlayerCards[0];
     // lecture de la carte index 0 du paquet du joueur 2
-    $take1cardp2 = $secondPlayerCards[0];
+    //!$take1cardp2 = $secondPlayerCards[0];
     // égalisation de $firstPlayerCards et de $firstPayerCardsWithout0index pour ne pas perdre l'origine
     // de $firstPlayerCards
-    $firstPayerCardsWithout0index = $firstPlayerCards;
+    //!$firstPayerCardsWithout0index = $firstPlayerCards;
     // effacement de l'index dont le résultat de recherche est l'index 0, joueur 1
-    unset($firstPayerCardsWithout0index[array_search([0], $firstPayerCardsWithout0index)]);
+    //!unset($firstPayerCardsWithout0index[array_search([0], $firstPayerCardsWithout0index)]);
     // décalage des indexs à partir de 0 que l'on affecte au nouveau paquet du joueur 1 qui se retrouve
     // avec 26 cartes
-    $firstPlayerCards = array_slice($firstPayerCardsWithout0index, 0);
+    //!$firstPlayerCards = array_slice($firstPayerCardsWithout0index, 0);
     // égalisation de $firstPlayerCards et de $secondPayerCardsWithout0index pour ne pas perdre l'origine
     // de $secondPlayerCards
-    $secondPayerCardsWithout0index = $secondPlayerCards;
+    //!$secondPayerCardsWithout0index = $secondPlayerCards;
     // effacement de l'index dont le résultat de recherche est l'index 0, jour 2
-    unset($secondPayerCardsWithout0index[array_search([0], $secondPayerCardsWithout0index)]);
+    //!unset($secondPayerCardsWithout0index[array_search([0], $secondPayerCardsWithout0index)]);
     // décalage des indexs à partir de 0 que l'on affecte au nouveau paquet du joueur 2 qui se retrouve
     // avec 26 cartes
-    $secondPlayerCards = array_slice($secondPayerCardsWithout0index, 0);
+    //!$secondPlayerCards = array_slice($secondPayerCardsWithout0index, 0);
     // valeur du champs "value" en entier de la carte joueur 1
-    $c1 = (int)($take1cardp1['value']);
+    //!$c1 = (int)($take1cardp1['value']);
     // valeur du champs "value" en entier de la carte joueur 1
-    $c2 = (int)($take1cardp2['value']);
+    //!$c2 = (int)($take1cardp2['value']);
     // si la valeur de la carte du joueur 2 est > à celle du joueur 1
-    if ($c1<$c2):
+    //!if ($c1<$c2):
         // remplissage du tableau $mainGagnante2
-        $mainGagnante2 = array_fill_keys([0], $take1cardp1) + array_fill_keys([1], $take1cardp2);
+        //!$mainGagnante2 = array_fill_keys([0], $take1cardp1) + array_fill_keys([1], $take1cardp2);
         // mélange du tableau main gagnante du joueur 2
-        shuffle($mainGagnante2);
+        //!shuffle($mainGagnante2);
         // pour chaque clé,valeur présentent dans le tableau main gagnante du
         // joueur 2
-        foreach ($mainGagnante2 as $key => $value):
+        //!foreach ($mainGagnante2 as $key => $value):
             // on rajoute à la fin du paquet de carte du joueur 2 chaque
             // carte du tableau tableau main gagnante du joueur 2
-            array_push($secondPlayerCards, $value);
-        endforeach;
-        echo '<pre>';
-        echo 'PLAYER 2 GAGNE :';
-        //var_dump($secondPlayerCards);
-        echo 'PLAYER 1 PERD :';
-        //var_dump($firstPlayerCards);
-        echo '</pre>';
-    endif;
+            //!array_push($secondPlayerCards, $value);
+        //!endforeach;
+        // echo '<pre>';
+        // echo 'PLAYER 2 GAGNE :';
+        // //var_dump($secondPlayerCards);
+        // echo 'PLAYER 1 PERD :';
+        // //var_dump($firstPlayerCards);
+        // echo '</pre>';
+    //!endif;
     // si la valeur de la carte du joueur 1 est > à celle du joueur 2
-    if ($c1>$c2):
-        $mainGagnante1 = array_fill_keys([0], $take1cardp1) + array_fill_keys([1], $take1cardp2);
-        shuffle($mainGagnante1);
-        foreach ($mainGagnante1 as $key => $value):
-            array_push($firstPlayerCards, $value);
-        endforeach;
-        echo '<pre>';
-        echo 'PLAYER 2 PERD :';
-        //var_dump($secondPlayerCards);
-        echo 'PLAYER 1 GAGNE :';
-        //var_dump($firstPlayerCards);
-        echo '</pre>';
-    endif;
+    //!if ($c1>$c2):
+        // !$mainGagnante1 = array_fill_keys([0], $take1cardp1) + array_fill_keys([1], $take1cardp2);
+        // !shuffle($mainGagnante1);
+        // !foreach ($mainGagnante1 as $key => $value):
+        // !    array_push($firstPlayerCards, $value);
+        // !endforeach;
+        // !echo '<pre>';
+        // !echo 'PLAYER 2 PERD :';
+        // var_dump($secondPlayerCards);
+        // echo 'PLAYER 1 GAGNE :';
+        // var_dump($firstPlayerCards);
+        // echo '</pre>';
+    //!endif;
     // les cartes des 2 joueurs sont égale alors bataille
     $p=0;
     $t=1;
@@ -99,48 +99,52 @@ $tours = 0;
             $secondPayerCardsWithout0index = $secondPlayerCards;
             unset($secondPayerCardsWithout0index[array_search([0], $secondPayerCardsWithout0index)]);
             $secondPlayerCards = array_slice($secondPayerCardsWithout0index, 0);
+            
+            
             $tapis1 = $tapis1 + array_fill_keys([($p+$t)], $take1cardp1);
             $tapis2 = $tapis2 + array_fill_keys([($p+$t)], $take1cardp2);
+            
+            
             if (count($firstPlayerCards)==0 || count($firstPlayerCards)==0):
                 break;
             endif;
             $c1 = (int)($take1cardp1['value']);
             $c2 = (int)($take1cardp2['value']);
-            if ($c1>$c2):
-                $mainGagnante1 = [];
-                foreach ($tapis1 as $key => $value):
-                    array_push($mainGagnante1, $value);
-                endforeach;
-                foreach ($tapis2 as $key => $value):
-                    array_push($mainGagnante1, $value);
-                endforeach;
-                shuffle($mainGagnante1);
-                foreach ($mainGagnante1 as $key => $value):
-                    array_push($firstPlayerCards, $value);
-                endforeach;
-            endif;
-            if ($c1<$c2):
-                $mainGagnante2 = [];
-                foreach ($tapis1 as $key => $value):
-                    array_push($mainGagnante2, $value);
-                endforeach;
-                foreach ($tapis2 as $key => $value):
-                    array_push($mainGagnante2, $value);
-                endforeach;
-                shuffle($mainGagnante2);
-                foreach ($mainGagnante2 as $key => $value):
-                    array_push($secondPlayerCards, $value);
-                endforeach;
-                echo '<pre>';
-                echo 'LE JOUEUR 1 GAGNE LA BATAILLE :';
-                echo '</pre>';
-            endif;
-            if (count($firstPlayerCards)==0 || count($firstPlayerCards)==0):
-                break;
-            endif;
-            if ($c1==$c2):
-                $p+=1;
-            endif;
+            //! if ($c1>$c2):
+            //!     $mainGagnante1 = [];
+            //!     foreach ($tapis1 as $key => $value):
+            //!         array_push($mainGagnante1, $value);
+            //!     endforeach;
+            //!     foreach ($tapis2 as $key => $value):
+            //!         array_push($mainGagnante1, $value);
+            //!     endforeach;
+            //!     shuffle($mainGagnante1);
+            //!     foreach ($mainGagnante1 as $key => $value):
+            //!         array_push($firstPlayerCards, $value);
+            //!     endforeach;
+            //! endif;
+            //! if ($c1<$c2):
+            //!     $mainGagnante2 = [];
+            //!     foreach ($tapis1 as $key => $value):
+            //!         array_push($mainGagnante2, $value);
+            //!     endforeach;
+            //!     foreach ($tapis2 as $key => $value):
+            //!         array_push($mainGagnante2, $value);
+            //!     endforeach;
+            //!     shuffle($mainGagnante2);
+            //!     foreach ($mainGagnante2 as $key => $value):
+            //!         array_push($secondPlayerCards, $value);
+            //!     endforeach;
+            //!     echo '<pre>';
+            //!     echo 'LE JOUEUR 1 GAGNE LA BATAILLE :';
+            //!     echo '</pre>';
+            //! endif;
+            //! if (count($firstPlayerCards)==0 || count($firstPlayerCards)==0):
+            //!     break;
+            //! endif;
+            //! if ($c1==$c2):
+            //!    $p+=1;
+            //! endif;
         else:
             echo '<pre>';
             echo 'BATAILLE :';
